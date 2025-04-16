@@ -324,7 +324,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &79595054
 Transform:
   m_ObjectHideFlags: 0
@@ -391,8 +391,10 @@ MonoBehaviour:
   _shootForce: 8
   _shootingPoint: {fileID: 1972410371}
   _targetAngle: 180
+  _originalAngle: 0
   _rotationSpeed: 200
   _isRotating: 0
+  _resetToOgPosition: 0
 --- !u!61 &92075780
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -448,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 116571709}
   - component: {fileID: 116571711}
-  - component: {fileID: 116571710}
+  - component: {fileID: 116571712}
   m_Layer: 6
   m_Name: Cannon
   m_TagString: Untagged
@@ -473,23 +475,6 @@ Transform:
   - {fileID: 1670919041}
   m_Father: {fileID: 1489787434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &116571710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116571708}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7761bcdaab929864aa1074e34939b006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shootForce: 8
-  _shootingPoint: {fileID: 481658471}
-  _targetAngle: 45
-  _rotationSpeed: 200
-  _isRotating: 0
 --- !u!61 &116571711
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -535,6 +520,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.61672497, y: 1.5641334}
   m_EdgeRadius: 0
+--- !u!114 &116571712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116571708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e2cfbe299d70a46b282ca5a8d9a6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shootForce: 8
+  _shootingPoint: {fileID: 481658471}
+  _targetAngle: 0
+  _originalAngle: 0
+  _rotationSpeed: 200
+  _isRotating: 0
+  _resetToOgPosition: 0
 --- !u!1 &125984783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1303,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &628565209
 Transform:
   m_ObjectHideFlags: 0
@@ -1366,8 +1370,10 @@ MonoBehaviour:
   _shootForce: 8
   _shootingPoint: {fileID: 1488365646}
   _targetAngle: 90
+  _originalAngle: 0
   _rotationSpeed: 200
   _isRotating: 0
+  _resetToOgPosition: 0
 --- !u!61 &729127993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2550,7 +2556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a91d4fff7abdf47a02efabea4e3867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isFlying: 0
 --- !u!50 &1825357379
 Rigidbody2D:
   serializedVersion: 4
@@ -2685,8 +2690,10 @@ MonoBehaviour:
   _shootForce: 8
   _shootingPoint: {fileID: 142394837}
   _targetAngle: 45
+  _originalAngle: 0
   _rotationSpeed: 200
   _isRotating: 0
+  _resetToOgPosition: 1
 --- !u!61 &1963412168
 BoxCollider2D:
   m_ObjectHideFlags: 0
