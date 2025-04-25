@@ -13,20 +13,20 @@ public class Player : MonoBehaviour
     float _shootForce;
     SpriteRenderer _PlayerSprite;
     bool _isFlying;
+    private HashSet<Cannon> cannonsTouched = new HashSet<Cannon>();
 
 
-    // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _shootController = GetComponent<ShootController>();
         _PlayerSprite = GetComponentInChildren<SpriteRenderer>();
         _isFlying = true;
+
+        cannonsTouched.Clear();
     }
 
 
-
-    // Update is called once per frame
     void Update()
     {
         if((_currentCannon!=null) && (_currentCannon._isRotating))
@@ -54,15 +54,25 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.GetComponent<Cannon>())
+        Cannon cannon = collision.GetComponent<Cannon>();
+        if (cannon && !cannonsTouched.Contains(cannon))
         {
-            Debug.Log("toque cannon");
+            Debug.Log("Toqué un nuevo cañón: " + cannon.name);
+            cannonsTouched.Add(cannon);
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.CannonHit();
+            }
+            else
+            {
+                Debug.LogError("GameManager.Instance es null");
+            }
+
             _isFlying = false;
             HidePlayer();
-            _currentCannon = collision.GetComponent<Cannon>();
+            _currentCannon = cannon;
             _currentCannon.initiateRotation();
-
 
             _shootingPoint = _currentCannon.ShootingPoint;
             _shootForce = _currentCannon.ShootForce;
@@ -81,11 +91,8 @@ public class Player : MonoBehaviour
             _isFlying = true;
             ShowPlayer();
             _rb.AddForce(_shootingPoint.right * _shootForce, ForceMode2D.Impulse);
-            Debug.Log("Player is shot");
             _currentCannon._isRotating = false;
         }
-
-
     }
 
     void HidePlayer()
