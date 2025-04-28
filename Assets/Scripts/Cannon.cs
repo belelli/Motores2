@@ -45,6 +45,11 @@ public abstract class Cannon: MonoBehaviour
         _collider = GetComponent<BoxCollider2D>();
         _isRotating = false;
         _parentTransform = transform.parent != null ? transform.parent : transform;
+        
+    }
+
+    private void Start()
+    {
         _originalAngle = _parentTransform.eulerAngles.z;
     }
 
