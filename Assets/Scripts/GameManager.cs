@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.ComponentModel.Design;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,6 +32,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+
+
+
+
     }
 
     void Start()
@@ -52,9 +58,10 @@ public class GameManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Clear previous references
-        objectivesText = null;
-        winPanel = null;
-        losePanel = null;
+        //objectivesText = null;
+        //winPanel = null;
+        //losePanel = null;
+
 
         // Find new references
         FindUIReferences();
@@ -62,6 +69,8 @@ public class GameManager : MonoBehaviour
         // Reset UI state
         if (winPanel != null) winPanel.SetActive(false);
         if (losePanel != null) losePanel.SetActive(false);
+
+
         UpdateUI();
     }
 
@@ -82,9 +91,9 @@ public class GameManager : MonoBehaviour
         losePanel = GameObject.FindGameObjectWithTag("LosePanel");
 
         // Verificar que se encontraron
-        if (objectivesText == null) Debug.LogError("TextMeshProUGUI no encontrado");
-        if (winPanel == null) Debug.LogError("WinPanel no encontrado");
-        if (losePanel == null) Debug.LogError("LosePanel no encontrado");
+        //if (objectivesText == null) Debug.LogError("TextMeshProUGUI no encontrado");
+        //if (winPanel == null) Debug.LogError("WinPanel no encontrado");
+        //if (losePanel == null) Debug.LogError("LosePanel no encontrado");
     }
 
     public void CannonHit()
@@ -160,7 +169,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("losePanel es null en LoseGame()");
+            //Debug.LogError("losePanel es null en LoseGame()");
         }
     }
 
@@ -179,3 +188,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 }
+
+
+
+
+
+
+// Un Canvas para win
+//un canvas para loose
+
+// los serializas, 
+// si tocas el flag pole, ganas, winCanvas.setActive(true)
+// perdes una vida : te manda a un Spawn Point. 

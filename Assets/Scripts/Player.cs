@@ -79,6 +79,9 @@ public class Player : MonoBehaviour
 
             PositionInShootingPoint(_currentCannon.ShootingPoint);
             FreezeMovement();
+
+
+
         }
     }
 
