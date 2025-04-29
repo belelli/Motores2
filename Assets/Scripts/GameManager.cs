@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No se encontró GameObject");
+            //Debug.LogError("No se encontró GameObject");
         }
 
         // Buscar los paneles

@@ -27,12 +27,20 @@ public class JoystickController : MonoBehaviour, IDragHandler, IEndDragHandler
         return _moveDir;
     }
 
+    public float GetAngle()
+    {
+        float angleRad = Mathf.Atan2(_moveDir.y, _moveDir.x);
+        float angleDeg = angleRad * Mathf.Rad2Deg;
+        return angleDeg;
+    }
+
 
     public void OnDrag(PointerEventData eventData)
     {
         _moveDir = Vector2.ClampMagnitude(eventData.position - _initialPosition, _magnitude);
         transform.position = _initialPosition + _moveDir;
         Debug.Log(_moveDir);
+        //Debug.Log("angulo" + GetAngle(_moveDir));
     }
 
     public void OnEndDrag(PointerEventData eventData)
