@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler, IEndDragHandler
 {
     [SerializeField] private RectTransform joystickBackground;
     [SerializeField] private RectTransform joystickHandle;
@@ -57,5 +57,10 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
             inputVector = Vector2.zero;
             joystickHandle.anchoredPosition = Vector2.zero;
         }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
     }
 }
