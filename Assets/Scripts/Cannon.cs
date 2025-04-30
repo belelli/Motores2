@@ -16,6 +16,7 @@ public abstract class Cannon: MonoBehaviour
     [SerializeField] public bool _isRotating;
     protected Transform _parentTransform;
     [SerializeField] bool _resetToOgPosition;
+    [SerializeField] public bool _isCurrentCannon;
 
     
 
@@ -45,6 +46,7 @@ public abstract class Cannon: MonoBehaviour
         _collider = GetComponent<BoxCollider2D>();
         _isRotating = false;
         _parentTransform = transform.parent != null ? transform.parent : transform;
+        _isCurrentCannon = false;
         
     }
 

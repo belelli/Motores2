@@ -21,7 +21,8 @@ public class ManualCannon : Cannon
     void Update()
     {
         //transform.rotation.z = _controller.GetAngle();
-        Rotate();
+        if (_isCurrentCannon) { Rotate(); }
+        
     }
 
     public void FollowStick()

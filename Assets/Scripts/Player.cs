@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour
     SpriteRenderer _PlayerSprite;
     bool _isFlying;
     private HashSet<Cannon> cannonsTouched = new HashSet<Cannon>();
+
+    [SerializeField] GameObject _explosion;
 
 
     void Start()
@@ -73,6 +76,7 @@ public class Player : MonoBehaviour
             HidePlayer();
             _currentCannon = cannon;
             _currentCannon.initiateRotation();
+            _currentCannon._isCurrentCannon = true;
 
             _shootingPoint = _currentCannon.ShootingPoint;
             _shootForce = _currentCannon.ShootForce;
@@ -94,8 +98,15 @@ public class Player : MonoBehaviour
             _isFlying = true;
             ShowPlayer();
             _rb.AddForce(_shootingPoint.right * _shootForce, ForceMode2D.Impulse);
+            SpawnExplosion(_explosion); //Feedback visual....quiza conviene pasarlo al script de Cannon????
             _currentCannon._isRotating = false;
+            _currentCannon._isCurrentCannon = false;
         }
+    }
+
+    private void SpawnExplosion(GameObject gameObject)
+    {
+        Instantiate(gameObject, transform.position, transform.rotation);
     }
 
     void HidePlayer()
