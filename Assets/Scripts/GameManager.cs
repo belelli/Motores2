@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour
 
     [Header("UI References")]
     [SerializeField] TextMeshProUGUI objectivesText;
-    [SerializeField] GameObject winPanel;
-    [SerializeField] GameObject losePanel;
+   
 
     public static GameManager Instance { get; private set; }
 
@@ -57,18 +56,10 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Clear previous references
-        //objectivesText = null;
-        //winPanel = null;
-        //losePanel = null;
-
-
-        // Find new references
+       
         FindUIReferences();
 
-        // Reset UI state
-        if (winPanel != null) winPanel.SetActive(false);
-        if (losePanel != null) losePanel.SetActive(false);
+      
 
 
         UpdateUI();
@@ -86,14 +77,7 @@ public class GameManager : MonoBehaviour
             //Debug.LogError("No se encontró GameObject");
         }
 
-        // Buscar los paneles
-        winPanel = GameObject.FindGameObjectWithTag("WinPanel");
-        losePanel = GameObject.FindGameObjectWithTag("LosePanel");
-
-        // Verificar que se encontraron
-        //if (objectivesText == null) Debug.LogError("TextMeshProUGUI no encontrado");
-        //if (winPanel == null) Debug.LogError("WinPanel no encontrado");
-        //if (losePanel == null) Debug.LogError("LosePanel no encontrado");
+       
     }
 
     public void CannonHit()
@@ -145,32 +129,16 @@ public class GameManager : MonoBehaviour
 
     void WinGame()
     {
-        Debug.Log("Intentando activar winPanel");
-        if (winPanel != null)
-        {
-            winPanel.SetActive(true);
-            Time.timeScale = 0f;
-            Debug.Log("winPanel activado correctamente");
-        }
-        else
-        {
-            Debug.LogError("winPanel es null en WinGame()");
-        }
+        Debug.Log("Victoria - cargando escena de victoria");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("WinScene");
     }
 
     void LoseGame()
     {
-        Debug.Log("Intentando activar losePanel");
-        if (losePanel != null)
-        {
-            losePanel.SetActive(true);
-            Time.timeScale = 0f;
-            Debug.Log("losePanel activado correctamente");
-        }
-        else
-        {
-            //Debug.LogError("losePanel es null en LoseGame()");
-        }
+        Debug.Log("Game Over - cargando escena de derrota");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("GameOverScene");
     }
 
     public void RestartGame()

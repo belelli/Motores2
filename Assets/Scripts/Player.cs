@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                Debug.LogError("GameManager.Instance es null");
+               // Debug.LogError("GameManager.Instance es null");
             }
 
             _isFlying = false;
@@ -98,16 +98,17 @@ public class Player : MonoBehaviour
             _isFlying = true;
             ShowPlayer();
             _rb.AddForce(_shootingPoint.right * _shootForce, ForceMode2D.Impulse);
-            SpawnExplosion(_explosion); //Feedback visual....quiza conviene pasarlo al script de Cannon????
+            // SpawnExplosion(_explosion); //Feedback visual....quiza conviene pasarlo al script de Cannon????
             _currentCannon._isRotating = false;
             _currentCannon._isCurrentCannon = false;
         }
     }
 
-    private void SpawnExplosion(GameObject gameObject)
+   /* private void SpawnExplosion(GameObject gameObject)
     {
         Instantiate(gameObject, transform.position, transform.rotation);
     }
+   */
 
     void HidePlayer()
     {
