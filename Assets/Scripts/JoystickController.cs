@@ -39,8 +39,7 @@ public class JoystickController : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         _moveDir = Vector2.ClampMagnitude(eventData.position - _initialPosition, _magnitude);
         transform.position = _initialPosition + _moveDir;
-        Debug.Log(_moveDir);
-        //Debug.Log("angulo" + GetAngle(_moveDir));
+        //Debug.Log("angulo" + GetAngle());
     }
 
     public void OnEndDrag(PointerEventData eventData)
