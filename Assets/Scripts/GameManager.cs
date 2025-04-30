@@ -59,8 +59,12 @@ public class GameManager : MonoBehaviour
        
         FindUIReferences();
 
-      
 
+        if (scene.name == "SampleScene") 
+        {
+            cannonsHit = 0;
+            
+        }
 
         UpdateUI();
     }
