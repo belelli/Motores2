@@ -18,7 +18,13 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject _explosion;
 
+    AudioManager audioManager;
 
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -98,7 +104,8 @@ public class Player : MonoBehaviour
             _isFlying = true;
             ShowPlayer();
             _rb.AddForce(_shootingPoint.right * _shootForce, ForceMode2D.Impulse);
-             SpawnExplosion(_explosion); //Feedback visual....quiza conviene pasarlo al script de Cannon????
+            SpawnExplosion(_explosion); //Feedback visual....quiza conviene pasarlo al script de Cannon????
+            audioManager.PlaySFX(audioManager.Disparo);
             _currentCannon._isRotating = false;
             _currentCannon._isCurrentCannon = false;
         }
