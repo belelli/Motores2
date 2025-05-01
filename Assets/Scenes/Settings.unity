@@ -1199,10 +1199,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 98665910}
   SFXSource: {fileID: 1890713853}
-  BackGround: {fileID: 0}
-  Lose: {fileID: 0}
-  Disparo: {fileID: 0}
-  Win: {fileID: 0}
+  BackGround: {fileID: 8300000, guid: 081eae467c5572d489918c6d204f7aa8, type: 3}
+  Lose: {fileID: 8300000, guid: eb740d7fa6091dc42852d03b4e197ee8, type: 3}
+  Disparo: {fileID: 8300000, guid: b2aed993c1578834a82b868c5c5da780, type: 3}
+  Win: {fileID: 8300000, guid: 4aa67b6a052d7ff4889ae42e9303c854, type: 3}
 --- !u!4 &1264547170
 Transform:
   m_ObjectHideFlags: 0

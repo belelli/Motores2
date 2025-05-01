@@ -8,6 +8,13 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private Button optionsButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private Button MainMenu;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+    }
 
     void Start()
     {
@@ -30,7 +37,9 @@ public class MainMenuController : MonoBehaviour
 
     void Settings()
     {
+        
         SceneManager.LoadScene("Settings");
+        audioManager.PlaySFX(audioManager.BackGround);
     }
 
     void Menu()
