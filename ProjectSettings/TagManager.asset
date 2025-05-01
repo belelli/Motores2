@@ -8,6 +8,7 @@ TagManager:
   - ObjectivesText
   - winPanelTag
   - losePanelTag
+  - Audio
   layers:
   - Default
   - TransparentFX

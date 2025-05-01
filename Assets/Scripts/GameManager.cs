@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
 
     [Header("UI References")]
     [SerializeField] TextMeshProUGUI objectivesText;
-   
+
+  
 
     public static GameManager Instance { get; private set; }
 
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+       
         if (Instance == null)
         {
             Instance = this;
@@ -99,6 +101,8 @@ public class GameManager : MonoBehaviour
 
     public void PlayerFailed()
     {
+        
+
         playerLives--;
         Debug.Log($"Vidas restantes: {playerLives}");
         UpdateUI();
@@ -147,6 +151,8 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+
+       
         playerLives = playerInitialLives;
         cannonsHit = 0;
         Time.timeScale = 1f;
