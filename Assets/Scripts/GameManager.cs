@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] TextMeshProUGUI objectivesText;
 
-  
+     AudioManager audioManager;
+
+
 
     public static GameManager Instance { get; private set; }
 
@@ -21,9 +23,11 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-       
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         if (Instance == null)
         {
+           
             Instance = this;
             DontDestroyOnLoad(gameObject);
             playerLives = playerInitialLives;
@@ -140,6 +144,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Victoria - cargando escena de victoria");
         Time.timeScale = 1f;
         SceneManager.LoadScene("WinScene");
+        audioManager.PlaySFX(audioManager.Win);
     }
 
     void LoseGame()
@@ -147,6 +152,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over - cargando escena de derrota");
         Time.timeScale = 1f;
         SceneManager.LoadScene("GameOverScene");
+        audioManager.PlaySFX(audioManager.BackGround);
     }
 
     public void RestartGame()
