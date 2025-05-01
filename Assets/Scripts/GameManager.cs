@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("objectivesText es null en UpdateUI()");
+             // Debug.LogWarning("objectivesText es null en UpdateUI()");
         }
     }
 
