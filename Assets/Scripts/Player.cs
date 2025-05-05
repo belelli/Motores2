@@ -78,6 +78,11 @@ public class Player : MonoBehaviour
                // Debug.LogError("GameManager.Instance es null");
             }
 
+
+        }
+
+        if (collision.GetComponent<Cannon>() != null)
+        {
             _isFlying = false;
             HidePlayer();
             _currentCannon = cannon;
@@ -89,10 +94,9 @@ public class Player : MonoBehaviour
 
             PositionInShootingPoint(_currentCannon.ShootingPoint);
             FreezeMovement();
-
-
-
         }
+        
+
     }
 
 
