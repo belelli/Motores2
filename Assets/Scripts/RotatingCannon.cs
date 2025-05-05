@@ -18,7 +18,6 @@ public class RotatingCannon : Cannon
         
         if (_isRotating == true)
         {
-            Debug.Log("aca???");
             Rotate();
         }
     }
@@ -26,6 +25,6 @@ public class RotatingCannon : Cannon
     public override void Rotate()
     {
         Debug.Log("what happenb");
-        _parentTransform.Rotate(Vector3.forward * _rotationSpeed * Time.deltaTime);
+        _parentTransform.Rotate(-Vector3.forward * _rotationSpeed * Time.deltaTime);
     }
 }
