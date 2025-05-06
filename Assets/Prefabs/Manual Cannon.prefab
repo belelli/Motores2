@@ -278,4 +278,5 @@ MonoBehaviour:
   _rotationSpeed: 0
   _isRotating: 0
   _resetToOgPosition: 0
+  _isCurrentCannon: 0
   _controller: {fileID: 0}

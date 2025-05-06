@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
         if (cannonsHit >= cannonsToHit)
         {
             Debug.Log("¡Todos los cañones alcanzados!");
-            WinGame();
+            //WinGame();
         }
     }
 
@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void WinGame()
+    public void WinGame()
     {
         Debug.Log("Victoria - cargando escena de victoria");
         Time.timeScale = 1f;

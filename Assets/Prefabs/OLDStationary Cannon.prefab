@@ -157,7 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1788032676100586447}
   m_Layer: 0
-  m_Name: Stationary Cannon
+  m_Name: OLDStationary Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -278,3 +278,4 @@ MonoBehaviour:
   _rotationSpeed: 200
   _isRotating: 0
   _resetToOgPosition: 1
+  _isCurrentCannon: 0
