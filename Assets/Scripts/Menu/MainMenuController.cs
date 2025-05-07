@@ -32,7 +32,7 @@ public class MainMenuController : MonoBehaviour
 
     void Jugar()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
 
     void Settings()
