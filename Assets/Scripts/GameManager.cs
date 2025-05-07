@@ -30,7 +30,8 @@ public class GameManager : MonoBehaviour
            
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            playerLives = playerInitialLives;
+            //playerLives = playerInitialLives;
+            playerLives = RemoteConfig.Instance.initialLives;
         }
         else
         {
@@ -115,7 +116,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("¡Game Over!");
             LoseGame();
-            playerLives = playerInitialLives;
+            playerLives = RemoteConfig.Instance.initialLives;
             cannonsHit = 0;
         }
         else
