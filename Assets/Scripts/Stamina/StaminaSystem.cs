@@ -70,7 +70,9 @@ public class StaminaSystem : MonoBehaviour
     {
         if (_currentStamina >= _maxStamina)
         {
-            _timerText.text = "Full Stamina";
+            _timerText.text = "Full Stamina"; 
+            Debug.Log("FULL STAMINA");
+            return;
         }
         
         TimeSpan timer = _nextStaminaTime - DateTime.Now;

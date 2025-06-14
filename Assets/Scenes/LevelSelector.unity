@@ -1438,8 +1438,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd21f5e98543024c9ee531674b73d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxStamina: 10
-  _rechargeTime: 10
+  _maxStamina: 5
+  _rechargeTime: 5
   _staminaText: {fileID: 1229492090}
   _timerText: {fileID: 790640498}
 --- !u!1 &2029173953
