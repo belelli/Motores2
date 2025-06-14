@@ -8,10 +8,12 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private Button optionsButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private Button MainMenu;
+    
     AudioManager audioManager;
 
     private void Awake()
     {
+        //DontDestroyOnLoad(gameObject);
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
     }
@@ -22,17 +24,18 @@ public class MainMenuController : MonoBehaviour
         startButton = GameObject.Find("Jugar").GetComponent<Button>();
         optionsButton = GameObject.Find("Ajustes").GetComponent<Button>();
         quitButton = GameObject.Find("Quit").GetComponent<Button>();
-        MainMenu = GameObject.Find("MenuPrincipal").GetComponent<Button>();
+        //MainMenu = GameObject.Find("MenuPrincipal").GetComponent<Button>();
 
         startButton.onClick.AddListener(Jugar);
         optionsButton.onClick.AddListener(Settings);
         quitButton.onClick.AddListener(QuitGame);
-        MainMenu.onClick.AddListener(Menu);
+        //MainMenu.onClick.AddListener(Menu);
     }
 
     void Jugar()
     {
-        SceneManager.LoadScene("Level1");
+        // SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("LevelSelector");
     }
 
     void Settings()

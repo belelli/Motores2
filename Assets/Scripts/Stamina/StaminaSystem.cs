@@ -6,9 +6,12 @@ using UnityEngine;
 
 public class StaminaSystem : MonoBehaviour
 {
-    [SerializeField] private int _maxStamina = 10;
+    
+
+    
+    [SerializeField] private int _maxStamina;
     int _currentStamina;
-    [SerializeField] private float _rechargeTime = 10f;
+    [SerializeField] private float _rechargeTime;
     [SerializeField] private TextMeshProUGUI _staminaText, _timerText;
     private bool _recharging;
 
@@ -16,6 +19,7 @@ public class StaminaSystem : MonoBehaviour
 
     private void Awake()
     {
+        
         LoadData();
     }
 
