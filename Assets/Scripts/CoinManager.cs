@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CurrencySystem : MonoBehaviour
+public class CoinManager : MonoBehaviour
 {
-    public static CurrencySystem Instance;
-    [SerializeField]private int _coinQty;
+    public static CoinManager Instance;
+    [SerializeField]public int CoinQty { get;private set; }
 
     [SerializeField] private int _defaultCoinQty;
     
@@ -36,16 +36,24 @@ public class CurrencySystem : MonoBehaviour
 
     void LoadData()
     {
-        _coinQty = PlayerPrefs.GetInt("CoinQty", _defaultCoinQty);
+        CoinQty = PlayerPrefs.GetInt("CoinQty", _defaultCoinQty);
     }
 
-    public void SaveData(int qty)
+    public void SaveData()
     {
-        PlayerPrefs.SetInt("CoinQty", _coinQty+qty);
+        PlayerPrefs.SetInt("CoinQty", CoinQty);
     }
 
     void UpdateCoinText()
     {
-        _coinQtyText.text = "$ "+_coinQty.ToString();
+        _coinQtyText.text = "$ "+CoinQty.ToString();
     }
+
+    public void AddCoins(int qty)
+    {
+        CoinQty += qty;
+        SaveData();
+        UpdateCoinText();
+    }
+    
 }

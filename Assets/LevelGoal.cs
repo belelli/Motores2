@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class LevelGoal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
+    [SerializeField] LevelSettings _levelSettings;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        CompleteLevel();
+    }
+
+    private void CompleteLevel()
+    {
+        //guardo las monedas ganadas
+        int coinsToReward = _levelSettings.CoinsToBeRewarded;
+        CoinManager.Instance.AddCoins(coinsToReward);
+        //Actualizar LevelDataManager
+        LevelDataManager.Instance.SetCoinsEarned(coinsToReward);
+        //cargo la escena de victoria
         GameManager.Instance.WinGame();
     }
 }
