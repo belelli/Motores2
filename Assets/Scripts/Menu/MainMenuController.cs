@@ -55,4 +55,9 @@ public class MainMenuController : MonoBehaviour
         Application.Quit();
         Debug.Log("SALISTE DEL JUEG0");
     }
+
+    public void Shop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
 }
