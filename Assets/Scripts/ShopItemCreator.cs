@@ -5,15 +5,15 @@ using UnityEngine;
 public class ShopItemCreator : MonoBehaviour
 {
     [SerializeField] ShopItemDisplay _itemPrefab;
-    [SerializeField] private List<GameObject> _items = new List<GameObject>();
+    [SerializeField] private List<ShopItemDisplay> _items = new List<ShopItemDisplay>();
     [SerializeField] private GameObject _contentParent;
 
     void Start()
     {
         var newItem = Instantiate(_itemPrefab);
         
-        _items.Add(newItem.gameObject);
-        _items.Add(newItem.gameObject);
+        _items.Add(newItem);
+        _items.Add(newItem);
         
         foreach (var item in _items)
         {
