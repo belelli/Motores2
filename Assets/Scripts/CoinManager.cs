@@ -55,5 +55,14 @@ public class CoinManager : MonoBehaviour
         SaveData();
         UpdateCoinText();
     }
+
+    public void SpendCoins(int qty)
+    {
+        CoinQty -= qty;
+        SaveData();
+        UpdateCoinText();
+    }
+    
+    
     
 }

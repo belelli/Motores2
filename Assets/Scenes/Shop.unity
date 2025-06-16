@@ -478,7 +478,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemPrefab: {fileID: 7383847091992567240, guid: 1617367feac427043962df3ed72633c0, type: 3}
-  _items: []
+  _items:
+  - {fileID: 11400000, guid: e75f28ce59697c947aecdcee296d0d6a, type: 2}
+  - {fileID: 11400000, guid: 7a1ac9ae9ac093743838fd83ed3a320d, type: 2}
   _contentParent: {fileID: 1738407520}
 --- !u!1 &1738407520
 GameObject:
