@@ -16,3 +16,4 @@ MonoBehaviour:
   itemDescription: Colores del campeon
   itemIcon: {fileID: 21300000, guid: 47922b6a5e6535d4695ee7757b8cbf1e, type: 3}
   itemCost: 5
+  itemId: 

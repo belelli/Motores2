@@ -4,15 +4,21 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CoinManager : MonoBehaviour
+[System.Serializable]
+public class CoinsManager : MonoBehaviour
 {
-    public static CoinManager Instance;
+    //CURRENCY
+    public static CoinsManager Instance;
     [SerializeField]public int CoinQty { get;private set; }
 
     [SerializeField] private int _defaultCoinQty;
     
     [SerializeField] TextMeshProUGUI _coinQtyText;
+    //CURRENCY
     
+    //PRODUCTS
+    [SerializeField] private List<string> unlockedIDs;
+    //PRODUCTS
     
     private void Awake()
     {

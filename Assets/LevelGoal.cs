@@ -14,7 +14,7 @@ public class LevelGoal : MonoBehaviour
     {
         //guardo las monedas ganadas
         int coinsToReward = _levelSettings.CoinsToBeRewarded;
-        CoinManager.Instance.AddCoins(coinsToReward);
+        CoinsManager.Instance.AddCoins(coinsToReward);
         //Actualizar LevelDataManager
         LevelDataManager.Instance.SetCoinsEarned(coinsToReward);
         //cargo la escena de victoria

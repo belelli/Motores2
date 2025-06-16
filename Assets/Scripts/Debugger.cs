@@ -15,11 +15,30 @@ public class Debugger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            CoinManager.Instance.AddCoins(10);
+            CoinsManager.Instance.AddCoins(10);
         }
         if (Input.GetKeyDown(KeyCode.B)) 
         { 
-            CoinManager.Instance.SpendCoins(5);
+            CoinsManager.Instance.SpendCoins(5);
         }
+        
+        if (Input.GetKeyDown(KeyCode.D)) 
+        { 
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
+            Debug.Log("PlayerPrefs han sido borrados!");
+        }
+        
+        if (Input.GetKeyDown(KeyCode.L)) 
+        { 
+            //InventoryManager.Instance.load(){}
+            Debug.Log("LOG");
+            Debug.Log("producto 101 " + InventoryManager.Instance.ProductIsInInventory("101"));
+            Debug.Log("producto 102 " + InventoryManager.Instance.ProductIsInInventory("102"));
+            
+            var s = PlayerPrefs.GetInt("ProductPurchased_101");
+            Debug.Log("directop de PP "+s.ToString());
+        }
+        
     }
 }

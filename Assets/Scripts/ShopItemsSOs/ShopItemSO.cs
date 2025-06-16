@@ -9,13 +9,18 @@ public class ShopItemSO : ScriptableObject
     public string itemDescription;
     public Sprite itemIcon;
     public int itemCost;
+    public string itemId;
+
+    
 
     public void BuyItem()
     {
-        if (CoinManager.Instance.CoinQty >= itemCost)
+        if (CoinsManager.Instance.CoinQty >= itemCost)
         {
             Debug.Log(itemName + " comprado");
-            CoinManager.Instance.SpendCoins(itemCost);
+            CoinsManager.Instance.SpendCoins(itemCost);
+            InventoryManager.Instance.PurchaseItem(itemId);
+            
         }
         else
         {
