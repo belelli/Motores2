@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+       //  AudioManager.Instance.PlaySFX(AudioManager.Instance.Disparo);
     }
     void Start()
     {

@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+       // AudioManager.Instance.PlaySFX(AudioManager.Instance.BackGround);
 
         if (Instance == null)
         {
@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Victoria - cargando escena de victoria");
         Time.timeScale = 1f;
         SceneManager.LoadScene("WinScene");
-        audioManager.PlaySFX(audioManager.Win);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.Win);
     }
 
     void LoseGame()
@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over - cargando escena de derrota");
         Time.timeScale = 1f;
         SceneManager.LoadScene("GameOverScene");
-        audioManager.PlaySFX(audioManager.BackGround);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.Lose);
     }
 
     public void RestartGame()
