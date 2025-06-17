@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
             ShowPlayer();
             _rb.AddForce(_shootingPoint.right * _shootForce, ForceMode2D.Impulse);
             SpawnExplosion(_explosion); //Feedback visual....quiza conviene pasarlo al script de Cannon????
-            audioManager.PlaySFX(audioManager.Disparo);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.Disparo);
             _currentCannon._isRotating = false;
             _currentCannon._isCurrentCannon = false;
         }
