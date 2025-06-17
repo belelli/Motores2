@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -26,4 +27,3 @@ public class AudioManager : MonoBehaviour
         if (clip != null && SFXSource != null) SFXSource.PlayOneShot(clip);
     }
 }
-
