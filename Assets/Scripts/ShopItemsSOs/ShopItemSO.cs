@@ -21,6 +21,7 @@ public class ShopItemSO : ScriptableObject
             CoinsManager.Instance.SpendCoins(itemCost);
             InventoryManager.Instance.PurchaseItem(itemId);
             
+            
         }
         else
         {

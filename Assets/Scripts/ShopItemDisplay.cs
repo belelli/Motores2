@@ -17,5 +17,6 @@ public class ShopItemDisplay : MonoBehaviour
           _itemCostText.text = "$ "+itemInfo.itemCost.ToString();
           _itemIcon.sprite = itemInfo.itemIcon;
           _buyButton.onClick.AddListener(itemInfo.BuyItem);
+          
      }
 }

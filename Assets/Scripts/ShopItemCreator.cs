@@ -10,8 +10,14 @@ public class ShopItemCreator : MonoBehaviour
 
     void Start()
     {
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
         foreach (var item in _items)
         {
+            if(InventoryManager.Instance.ProductIsInInventory(item.itemId)) {continue;}
             var newItem = Instantiate(_itemPrefab, _contentParent.transform);
             newItem.Initialize(item);
         }
