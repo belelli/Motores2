@@ -14,4 +14,9 @@ public class MenuAjustes : MonoBehaviour
         SceneManager.LoadScene("Menu");
     
     }
+
+    public void DeletePlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }

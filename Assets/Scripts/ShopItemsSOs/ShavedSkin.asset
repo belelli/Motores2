@@ -16,4 +16,4 @@ MonoBehaviour:
   itemDescription: Chau mostacho
   itemIcon: {fileID: 21300000, guid: 2f98fd15341e0994890a9f3eb7f58727, type: 3}
   itemCost: 3
-  itemId: 
+  itemId: 102
