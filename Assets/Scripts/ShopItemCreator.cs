@@ -11,6 +11,7 @@ public class ShopItemCreator : MonoBehaviour
     void Start()
     {
         UpdateUI();
+        
     }
 
     private void UpdateUI()
@@ -20,7 +21,13 @@ public class ShopItemCreator : MonoBehaviour
             if(InventoryManager.Instance.ProductIsInInventory(item.itemId)) {continue;}
             var newItem = Instantiate(_itemPrefab, _contentParent.transform);
             newItem.Initialize(item);
+            newItem.OnItemPurchase+=OnItemDisplayPurchase;
         }
+    }
+
+    void OnItemDisplayPurchase(ShopItemDisplay item)
+    {
+        Destroy(item.gameObject);
     }
 }
 
