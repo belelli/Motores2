@@ -26,6 +26,7 @@ public class InventoryManager : MonoBehaviour
     public void PurchaseItem(string id)
     {
         string key = PURCHASE_KEY_PREFIX + id;
+        Debug.Log("el id es "+id);
         Debug.Log("La string Key es "+key);
         PlayerPrefs.SetInt(key, 1);
         PlayerPrefs.Save();

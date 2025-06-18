@@ -36,4 +36,10 @@ public class MainMenuController : MonoBehaviour
         Application.Quit();
         Debug.Log("SALISTE DEL JUEGO");
     }
+
+
+    void Shop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
 }
