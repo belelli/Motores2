@@ -2652,7 +2652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleFactor: 0.95
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: eb740d7fa6091dc42852d03b4e197ee8, type: 3}
 --- !u!1 &1065618184
 GameObject:
   m_ObjectHideFlags: 0
