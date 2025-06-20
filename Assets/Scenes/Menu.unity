@@ -1020,7 +1020,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 9.682312, y: 17.54918}
+  m_AnchoredPosition: {x: 9.682373, y: 17.549194}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &537905474
@@ -3992,7 +3992,6 @@ MonoBehaviour:
   startButton: {fileID: 607994223}
   optionsButton: {fileID: 1018733210}
   quitButton: {fileID: 1046018893}
-  MainMenu: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4009,6 +4008,6 @@ SceneRoots:
   - {fileID: 2105761266}
   - {fileID: 606496031}
   - {fileID: 1694190109}
+  - {fileID: 43619565}
   - {fileID: 1861479940}
   - {fileID: 1858240728}
-  - {fileID: 43619565}

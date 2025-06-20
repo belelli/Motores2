@@ -36,10 +36,10 @@ public class Debugger : MonoBehaviour
             Debug.Log("producto 101 " + InventoryManager.Instance.ProductIsInInventory("101"));
             Debug.Log("producto 102 " + InventoryManager.Instance.ProductIsInInventory("102"));
             
-            // var s = PlayerPrefs.GetInt("ProductPurchased_101");
-            // Debug.Log("directop de PP 101 es" +s.ToString());
-            // s = PlayerPrefs.GetInt("ProductPurchased_102");
-            // Debug.Log("directop de PP 102 es "+s.ToString());
+            var s = PlayerPrefs.GetInt("ProductPurchased_101");
+            Debug.Log("directop de PP 101 es" +s.ToString());
+            s = PlayerPrefs.GetInt("ProductPurchased_102");
+            Debug.Log("directop de PP 102 es "+s.ToString());
         }
         
     }
