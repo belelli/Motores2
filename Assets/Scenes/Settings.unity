@@ -979,6 +979,7 @@ GameObject:
   - component: {fileID: 810479921}
   - component: {fileID: 810479920}
   - component: {fileID: 810479919}
+  - component: {fileID: 810479922}
   m_Layer: 5
   m_Name: BotonVolver
   m_TagString: Untagged
@@ -1100,6 +1101,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810479917}
   m_CullTransparentMesh: 1
+--- !u!114 &810479922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810479917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20143c2375e73c04cac01a872b8e9ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleFactor: 0.9
+  clickSound: {fileID: 8300000, guid: eb740d7fa6091dc42852d03b4e197ee8, type: 3}
 --- !u!1 &814887179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,6 +1427,7 @@ GameObject:
   - component: {fileID: 1431491878}
   - component: {fileID: 1431491877}
   - component: {fileID: 1431491876}
+  - component: {fileID: 1431491879}
   m_Layer: 5
   m_Name: DeleteData Button
   m_TagString: Untagged
@@ -1533,6 +1549,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431491874}
   m_CullTransparentMesh: 1
+--- !u!114 &1431491879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431491874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20143c2375e73c04cac01a872b8e9ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleFactor: 0.9
+  clickSound: {fileID: 8300000, guid: eb740d7fa6091dc42852d03b4e197ee8, type: 3}
 --- !u!1 &1650476238
 GameObject:
   m_ObjectHideFlags: 0
