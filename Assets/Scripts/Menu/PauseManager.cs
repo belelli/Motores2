@@ -7,9 +7,13 @@ public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     private bool isPaused = false;
+    public GameObject pauseButton; 
+
+
 
     void Update()
     {
+#if UNITY_EDITOR || UNITY_STANDALONE
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -17,26 +21,29 @@ public class PauseManager : MonoBehaviour
             else
                 Pause();
         }
-    }
-
-    public void Resume()
-    {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f; 
-        isPaused = false;
+#endif
     }
 
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f; 
+        pauseButton.SetActive(false); 
+        Time.timeScale = 0f;
         isPaused = true;
+    }
+
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        pauseButton.SetActive(true);
+        Time.timeScale = 1f;
+        isPaused = false;
     }
 
     public void LoadMainMenu()
     {
-        Time.timeScale = 1f; 
-        SceneManager.LoadScene("Menu"); 
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Menu");
     }
 
     public void QuitGame()
