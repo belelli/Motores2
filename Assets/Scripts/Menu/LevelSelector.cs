@@ -6,19 +6,9 @@ using UnityEngine.UI;
 
 public class LevelSelector : MonoBehaviour
 {
-    [SerializeField]private Button MainMenu, Level1, Level2, Level3;
+    [SerializeField]private Button MainMenu, Skins, Level1, Level2, Level3;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void MainMenuLoad()
     {
@@ -28,6 +18,11 @@ public class LevelSelector : MonoBehaviour
     public void Level1Load()
     {
         SceneManager.LoadScene("Level1");
+    }
+
+    public void SkinsSceneLoad()
+    {
+        SceneManager.LoadScene("SkinSelection");
     }
     public void Level2Load()
     {

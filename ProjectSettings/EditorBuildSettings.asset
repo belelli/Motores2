@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 65003a52bae14be4b993d113561cade8
+  - enabled: 1
+    path: Assets/Scenes/SkinSelection.unity
+    guid: d697e83dc3d632d4682013d3e48da560
   m_configObjects: {}
