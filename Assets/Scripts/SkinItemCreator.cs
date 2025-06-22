@@ -5,7 +5,7 @@ using UnityEngine;
 public class SkinItemCreator : MonoBehaviour
 {
 
-    [SerializeField] ShopItemDisplay _itemPrefab;
+    [SerializeField] SkinItemDisplay _itemPrefab;
     [SerializeField] private List<ShopItemSO> _items = new List<ShopItemSO>();
     [SerializeField] private GameObject _contentParent;
 
@@ -19,15 +19,15 @@ public class SkinItemCreator : MonoBehaviour
     {
         foreach (var item in _items)
         {
-            if (InventoryManager.Instance.ProductIsInInventory(item.itemId)) { continue; }
+            if (!InventoryManager.Instance.ProductIsInInventory(item.itemId)) { continue; }
             var newItem = Instantiate(_itemPrefab, _contentParent.transform);
             newItem.Initialize(item);
-            newItem.OnItemPurchase += OnItemDisplayPurchase;
+            newItem.OnSkinSelected += OnSkinDisplaySelected;
         }
     }
 
-    void OnItemDisplayPurchase(ShopItemDisplay item)
+    void OnSkinDisplaySelected(SkinItemDisplay item) 
     {
-        Destroy(item.gameObject);
+        //Destroy(item.gameObject);
     }
 }

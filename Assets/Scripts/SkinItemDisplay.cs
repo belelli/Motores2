@@ -12,7 +12,7 @@ public class SkinItemDisplay : MonoBehaviour
     [SerializeField] Button _equipButton;
     ShopItemSO _currentShopItem;
 
-    public Action<SkinItemDisplay> OnItemPurchase;
+    public Action<SkinItemDisplay> OnSkinSelected;
 
     public void Initialize(ShopItemSO itemInfo)
     {
@@ -21,13 +21,14 @@ public class SkinItemDisplay : MonoBehaviour
         _itemDescriptionText.text = itemInfo.itemDescription;
         //_itemCostText.text = "$ " + itemInfo.itemCost.ToString();
         _itemIcon.sprite = itemInfo.itemIcon;
-        _equipButton.onClick.AddListener(BuyItemMiddle);
+        _equipButton.onClick.AddListener(SelectSkinMiddle);
 
     }
 
-    void BuyItemMiddle()
+    void SelectSkinMiddle()
     {
-        _currentShopItem.BuyItem();
-        OnItemPurchase?.Invoke(this);
+        //_currentShopItem.BuyItem();
+        InventoryManager.Instance.EquipSkin(_itemIcon.sprite);
+        OnSkinSelected?.Invoke(this);
     }
 }
