@@ -48,6 +48,7 @@ public class ComplexEnemy : MonoBehaviour
 
                 if (GameManager.Instance != null)
                 {
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.Lose);
                     GameManager.Instance.PlayerFailed();
                 }
                 else
